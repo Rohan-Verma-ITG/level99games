@@ -1,0 +1,392 @@
+.custom-header-section {
+    position: absolute;
+    transform: translateY(0);
+    left: 0%;
+    top: 0%;
+    width: 100%;
+    border-top: 5px solid #11170E;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.custom-header {
+    text-transform: uppercase;
+    color: #ffffff;
+    overflow: visible;
+    font: 1em Komu A;
+}
+
+
+
+
+
+/* --- Announcement Bar --- */
+.announcement-bar {
+    border-bottom: 5px solid #6CBE45;
+    font-size: 14px;
+    height: 42px;
+    background-color: #11170E;
+    color: #fff;
+}
+
+.announcement-bar svg {
+    fill: white;
+}
+
+
+.header-wrapper.fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    background-color: rgba(11, 19, 7, 0.55);
+    backdrop-filter: blur(8px);
+}
+
+.announcement-inner {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    width: 100%;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 190px;
+}
+
+.announcement-social {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding-left: 20px;
+}
+
+.announcement-social i {
+    color: #fff;
+    font-size: 16px;
+}
+
+.announcement-text {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    justify-content: center;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+/* The Green Slanted CTA */
+.announcement-cta {
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    overflow: hidden;
+    position: absolute;
+    right: 0%;
+}
+
+/* --- Main Header --- */
+.header-main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* max-width: 1400px; */
+    margin: 0 auto;
+    width: 100%;
+    padding-bottom: 12px;
+    padding-top: 12px;
+}
+
+
+.header-wrapper {
+    position: absolute;
+    top: 43px;
+    z-index: 999;
+    background-color: #0b13078c;
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+}
+
+
+.header-content {
+    color: #fff;
+    position: relative;
+    z-index: 102;
+
+}
+
+.container {
+    margin: 0 auto;
+    /* padding-left: 30px;
+    padding-right: 30px; */
+    width: 100%;
+    /* background-color: rgba(11, 19, 7, 0.55); */
+
+}
+
+
+.header-logo img {
+    height: 50px;
+    width: auto;
+}
+
+ul.list-menu.list-menu--inline {
+    display: flex;
+    list-style: none;
+    color: #fff;
+    margin: 0;
+    gap: 20px;
+    align-items: center;
+    padding-bottom: 26px;
+}
+
+.header-icons {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.header-menu ul {
+    background: #0000000d;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+}
+
+
+.announcement-social:after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 25%;
+    height: auto;
+    left: auto;
+    /* bottom: 0; */
+    border-bottom: 40px solid #6cbe45;
+    border-left: 33px solid transparent;
+}
+
+
+
+
+
+
+.header-wrapper {
+
+    width: 100%;
+    background-color: #0b13078c;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+
+/* when fixed class is added */
+.header-wrapper.fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    /* SAME background */
+    background-color: #0b13078c;
+
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.header-icons a svg path {
+    transition: stroke 0.3s ease;
+}
+
+.header-icons a:hover svg path {
+    stroke: #6CBE45;
+    /* hover color */
+}
+
+.green-slide-text {
+    display: inline-block;
+    white-space: nowrap;
+    opacity: 0;
+    transform: translateX(40px);
+    animation: slideTextRTL 0.7s ease forwards;
+}
+
+@keyframes slideTextRTL {
+    from {
+        opacity: 0;
+        transform: translateX(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+/* =========================
+   Tablet (1024px)
+========================= */
+@media (max-width: 1024px) {
+.announcement-bar {
+    border-bottom: 5px solid #6CBE45;
+    font-size: 9px;
+    height: 42px;
+    background-color: #11170e;
+    color: #fff;
+}
+    .announcement-inner {
+        gap: 60px;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    ul.list-menu.list-menu--inline {
+        gap: 14px;
+    }
+
+    .header-icons {
+        gap: 16px;
+    }
+
+    .announcement-cta {
+        right: 2%;
+    }
+
+}
+
+
+/* =========================
+   Small Tablet (768px)
+========================= */
+@media (max-width: 768px) {
+
+
+    .announcement-bar {
+        border-bottom: 5px solid #6CBE45;
+        font-size: 8px;
+        height: 42px;
+        color: #fff;
+        height: 55px;
+        /* padding: 6px 0; */
+        border-bottom: 2px solid #6CBE45;
+    }
+
+    .announcement-inner {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 0px;
+        justify-content: center;
+    }
+
+    .announcement-inner p {
+        margin: 0;
+    }
+
+    .announcement-text {
+        grid-column: span 2;
+        text-align: center;
+        font-size: 13px;
+        /* display: none; */
+    }
+
+    .announcement-social {
+        padding-left: 10px;
+        gap: 10px;
+        display: none;
+    }
+
+    .announcement-cta {
+        position: relative;
+        right: auto;
+        justify-content: center;
+    }
+
+    .header-main {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .announcement-social:after {
+        content: "";
+        /* display: none; */
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 25%;
+        height: auto;
+        left: auto;
+        border-bottom: 40px solid #6cbe45;
+        border-left: 33px solid transparent;
+    }
+
+    .header-wrapper {
+        position: absolute;
+        top: 60px;
+        z-index: 999;
+        background-color: #0b13078c;
+        -webkit-backdrop-filter: blur(8px);
+        backdrop-filter: blur(8px);
+    }
+}
+
+
+/* =========================
+   Mobile (480px)
+========================= */
+@media (max-width: 480px) {
+
+    .announcement-inner {
+        grid-template-columns: 1fr;
+        gap: 0px;
+        text-align: center;
+    }
+
+    .announcement-social {
+        justify-content: center;
+        padding-left: 0;
+    }
+
+    .announcement-text {
+        font-size: 12px;
+        letter-spacing: 0.3px;
+    }
+
+    .announcement-cta {
+        position: relative;
+        justify-content: center;
+    }
+
+    .header-main {
+        /* flex-wrap: wrap; */
+        gap: 10px;
+    }
+
+    ul.list-menu.list-menu--inline {
+        display: none;
+    }
+
+    .header-icons {
+        gap: 14px;
+        /* display: none; */
+    }
+
+}
+
+
+/* =========================
+   Very Small Devices
+========================= */
+@media (max-width: 360px) {
+
+    .announcement-text {
+        font-size: 11px;
+    }
+
+    .header-icons svg {
+        width: 18px;
+        height: 18px;
+    }
+
+}
