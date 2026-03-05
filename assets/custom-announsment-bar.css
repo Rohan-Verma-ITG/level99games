@@ -50,7 +50,7 @@
     margin: 0 auto;
     width: 100%;
     grid-template-columns: repeat(3, 1fr);
-    gap: 190px;
+    gap: 120px;
 }
 
 .announcement-social {
@@ -116,11 +116,7 @@
 
 .container {
     margin: 0 auto;
-    /* padding-left: 30px;
-    padding-right: 30px; */
     width: 100%;
-    /* background-color: rgba(11, 19, 7, 0.55); */
-
 }
 
 
@@ -162,7 +158,6 @@ ul.list-menu.list-menu--inline {
     width: 25%;
     height: auto;
     left: auto;
-    /* bottom: 0; */
     border-bottom: 40px solid #6cbe45;
     border-left: 33px solid transparent;
 }
@@ -181,16 +176,12 @@ ul.list-menu.list-menu--inline {
 }
 
 
-/* when fixed class is added */
 .header-wrapper.fixed {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-
-    /* SAME background */
     background-color: #0b13078c;
-
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
 }
@@ -201,7 +192,6 @@ ul.list-menu.list-menu--inline {
 
 .header-icons a:hover svg path {
     stroke: #6CBE45;
-    /* hover color */
 }
 
 .green-slide-text {
@@ -225,17 +215,15 @@ ul.list-menu.list-menu--inline {
 }
 
 
-/* =========================
-   Tablet (1024px)
-========================= */
 @media (max-width: 1024px) {
-.announcement-bar {
-    border-bottom: 5px solid #6CBE45;
-    font-size: 9px;
-    height: 42px;
-    background-color: #11170e;
-    color: #fff;
-}
+    .announcement-bar {
+        border-bottom: 5px solid #6CBE45;
+        font-size: 9px;
+        height: 42px;
+        background-color: #11170e;
+        color: #fff;
+    }
+
     .announcement-inner {
         gap: 60px;
         grid-template-columns: 1fr 1fr 1fr;
@@ -247,6 +235,16 @@ ul.list-menu.list-menu--inline {
 
     .header-icons {
         gap: 16px;
+    }
+
+    .announcement-inner {
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        width: 100%;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 60px;
     }
 
     .announcement-cta {
@@ -390,3 +388,6 @@ ul.list-menu.list-menu--inline {
     }
 
 }
+
+
+

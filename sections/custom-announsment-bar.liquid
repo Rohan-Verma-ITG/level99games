@@ -154,46 +154,76 @@
   </div>
 </div>
 
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const slider = document.querySelector('#Slider-{{ section.id }}');
+      if (!slider) return;
+
+      const slides = slider.querySelectorAll('.slider__slide');
+      const prevBtn = document.querySelector('.slider-button--prev');
+      const nextBtn = document.querySelector('.slider-button--next');
+
+      let currentIndex = 0;
+      const totalSlides = slides.length;
+      const autoplay = slider.dataset.autoplay === 'true';
+      const speed = (slider.dataset.speed || 5) * 1000;
+
+      function showSlide(index) {
+        slides.forEach((slide, i) => {
+          slide.style.display = i === index ? 'block' : 'none';
+        });
+      }
+
+      function nextSlide() {
+        currentIndex = (currentIndex + 1) % totalSlides;
+        showSlide(currentIndex);
+      }
+
+      function prevSlide() {
+        currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+        showSlide(currentIndex);
+      }
+
+      if (nextBtn) nextBtn.addEventListener('click', nextSlide);
+      if (prevBtn) prevBtn.addEventListener('click', prevSlide);
+
+      showSlide(currentIndex);
+
+      if (autoplay && totalSlides > 1) {
+        setInterval(nextSlide, speed);
+      }
+    });
+  </script>
+
+{% comment %} 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     const slider = document.querySelector('#Slider-{{ section.id }}');
     if (!slider) return;
 
     const slides = slider.querySelectorAll('.slider__slide');
-    const prevBtn = document.querySelector('.slider-button--prev');
-    const nextBtn = document.querySelector('.slider-button--next');
-
-    let currentIndex = 0;
-    const totalSlides = slides.length;
     const autoplay = slider.dataset.autoplay === 'true';
     const speed = (slider.dataset.speed || 5) * 1000;
 
-    function showSlide(index) {
-      slides.forEach((slide, i) => {
-        slide.style.display = i === index ? 'block' : 'none';
-      });
+    let index = 0;
+    const totalSlides = slides.length;
+
+    function moveSlide() {
+      index++;
+
+      if (index >= totalSlides) {
+        index = 0;
+      }
+
+      slider.style.transform = 'translateX(-' + index * 100 + '%)';
     }
-
-    function nextSlide() {
-      currentIndex = (currentIndex + 1) % totalSlides;
-      showSlide(currentIndex);
-    }
-
-    function prevSlide() {
-      currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
-      showSlide(currentIndex);
-    }
-
-    if (nextBtn) nextBtn.addEventListener('click', nextSlide);
-    if (prevBtn) prevBtn.addEventListener('click', prevSlide);
-
-    showSlide(currentIndex);
 
     if (autoplay && totalSlides > 1) {
-      setInterval(nextSlide, speed);
+      setInterval(moveSlide, speed);
     }
   });
-</script>
+</script> {% endcomment %}
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
@@ -241,17 +271,26 @@
       class="header-main page-width"
       data-menu-behavior="{{ section.settings.menu_open_behavior }} header--{{ section.settings.logo_position }} "
     >
-      <div class="menu-open">
-        {%- liquid
-          if section.settings.menu != blank
-            render 'header-drawer'
-          endif
+      <!-- Logo -->
+      {% comment %}
+        <div class="header-logo">
+          {% if section.settings.logo != blank %}
+            {{ section.settings.logo | image_url: width: 600 | image_tag }}
+          {% else %}
+            <span class="logo-text">{{ shop.name }}</span>
+          {% endif %}
+        </div>
+      {% endcomment %}
 
-          if section.settings.logo_position == 'top-center' or section.settings.menu == blank
-            render 'header-search', input_id: 'Search-In-Modal-1'
-          endif
-        -%}
-      </div>
+      {%- liquid
+        if section.settings.menu != blank
+          render 'header-drawer'
+        endif
+
+        if section.settings.logo_position == 'top-center' or section.settings.menu == blank
+          render 'header-search', input_id: 'Search-In-Modal-1'
+        endif
+      -%}
 
       {%- if section.settings.logo_position != 'middle-center' -%}
         {%- if request.page_type == 'index' -%}

@@ -11,32 +11,9 @@
   "name": "t:sections.header.name",
   "type": "header",
   "sections": {
-    "announcement-bar": {
-      "type": "announcement-bar",
-      "blocks": {
-        "announcement-bar-0": {
-          "type": "announcement",
-          "settings": {
-            "text": "Welcome to our store",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "announcement-bar-0"
-      ],
-      "settings": {
-        "auto_rotate": false,
-        "change_slides_speed": 5,
-        "color_scheme": "scheme-1",
-        "show_line_separator": true,
-        "show_social": false,
-        "enable_country_selector": false,
-        "enable_language_selector": false
-      }
-    },
     "header": {
       "type": "header",
+      "disabled": true,
       "settings": {
         "logo_position": "middle-left",
         "mobile_logo_position": "center",
@@ -53,10 +30,53 @@
         "padding_top": 20,
         "padding_bottom": 20
       }
+    },
+    "custom_announsment_bar_zhxRz3": {
+      "type": "custom-announsment-bar",
+      "blocks": {
+        "green_slide_MmyhgT": {
+          "type": "green_slide",
+          "settings": {
+            "text": "sssssssssssssssssssssss",
+            "link": ""
+          }
+        },
+        "green_slide_ETaibN": {
+          "type": "green_slide",
+          "settings": {
+            "text": "Lightbringer pre-orders now!vdfsdfsdfsfd",
+            "link": ""
+          }
+        },
+        "green_slide_EKMRfj": {
+          "type": "green_slide",
+          "settings": {
+            "text": "Lightbringer pre-orders now!",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "green_slide_MmyhgT",
+        "green_slide_ETaibN",
+        "green_slide_EKMRfj"
+      ],
+      "name": "Header + Announcement",
+      "settings": {
+        "enable_announcement": true,
+        "auto_rotate": true,
+        "change_slides_speed": 5,
+        "center_announcement_text": "Orders over $50 come with a free bonus gift!",
+        "menu_type_desktop": "dropdown",
+        "logo_width": 140,
+        "logo_position": "middle-left",
+        "menu": "",
+        "menu_open_behavior": "hover"
+      }
     }
   },
   "order": [
-    "announcement-bar",
-    "header"
+    "header",
+    "custom_announsment_bar_zhxRz3"
   ]
 }
